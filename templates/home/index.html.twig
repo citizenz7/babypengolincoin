@@ -165,7 +165,7 @@
                     <!-- conteact address and details -->
                     <div class="row">
                         <div class="col-lg-12 text-center border rounded p-3">
-                            <span class="fs-4">{{ section.contentMain|replace({'<div>': '', '</div>': '',})|raw }}</span>
+                            <p class="fs-4 text-break">{{ section.contentMain|replace({'<div>': '', '</div>': '',})|raw }}</p>
                         </div>
                     </div>
 
@@ -290,7 +290,7 @@
                     </div>
                     <div class="row">
                         {# <h1 class="text-center fw-bold display-5 mb-4">$bPGO on the Net</h1> #}
-                        <div class="col text-center">
+                        <div class="col text-center text-break">
                             {{ section.contentMain|replace({'<div>': '', '</div>': '',})|raw }}
                         </div>
                     </div>
