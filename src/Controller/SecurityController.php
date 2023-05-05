@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\SettingRepository;
+use App\Repository\SocialRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,7 +14,8 @@ class SecurityController extends AbstractController
     #[Route(path: '/login', name: 'app_login')]
     public function login(
         AuthenticationUtils $authenticationUtils,
-        SettingRepository $settingRepository
+        SettingRepository $settingRepository,
+        SocialRepository $socialRepository
     ): Response {
         // if ($this->getUser()) {
         //     return $this->redirectToRoute('target_path');
@@ -27,7 +29,8 @@ class SecurityController extends AbstractController
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error,
-            'settings' => $settingRepository->findAll()
+            'settings' => $settingRepository->findAll(),
+            'socials' => $socialRepository->findAll()
         ]);
     }
 
