@@ -7,6 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="bPGO is a hyper-deflationary community driven token on the BinanceSmartChain" />
     <meta name="author" content="Pengolincoin - CitizenZ" />
+    <meta name="image" content="{{ asset('assets/img/' ~ settings[0].siteLogo) }}">
+    <link rel="canonical" href="{{ settings[0].siteUrlfull }}" />
+
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="{{ settings[0].siteName }}">
+    <meta itemprop="description" content="{{ settings[0].siteDescription }}">
+    <meta itemprop="image" content="{{ asset('assets/img/' ~ settings[0].siteLogo ) }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ settings[0].siteName }}">
+    <meta name="twitter:description" content="{{ settings[0].siteDescription }}">
+    <meta name="twitter:site" content="{{ settings[0].siteName }}">
+    <meta name="twitter:image:src" content="{{ asset('assets/img/' ~ settings[0].siteLogo) }}">
+
+    <!-- Open Graph general -->
+    <meta property="og:title" content="{{ settings[0].siteName }}" />
+    <meta property="og:description" content="{{ settings[0].siteDescription }}" />
+    <meta property="og:image" content="{{ asset('assets/img/' ~ settings[0].siteLogo ) }}" />
+    <meta property="og:url" content="{{ settings[0].siteName }}" />
+    <meta property="og:site_name" content="{{ settings[0].siteName }}">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website" />
 
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logo.png') }}" />
