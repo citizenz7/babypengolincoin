@@ -1,9 +1,9 @@
-<!-- Navigation-->
+<!-- Navigation -->
 <nav class="navbar navbar-expand-lg bg-pgo fixed-top" id="mainNav">
     <div class="container">
         <a class="navbar-brand" href="{{ path('app_home') }}">
-            <img class="img-fluid" style="max-width: 75px; width: 100%;" src="{{ asset('assets/img/logo.png') }}" alt="bPGO">
-            babyPGO
+            <img class="img-fluid" style="max-width: 75px; width: 100%;" src="{{ asset('assets/img/' ~ settings[0].siteLogo) }}" alt="bPGO">
+            {{ settings[0].siteName }}
         </a>
         <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
             data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -17,6 +17,7 @@
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ path('app_home') }}#about">What is bPGO?</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ path('app_home') }}#tokenomics">Tokenomics</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ path('app_home') }}#market">Market</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ path('app_home') }}#links">Links & Tutos</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ path('app_home') }}#charity">Charity</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ path('app_home') }}#roadmap">Roadmap</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ path('app_home') }}#faq">FAQ</a></li>

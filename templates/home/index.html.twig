@@ -1,440 +1,390 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Baby Pengolincoin (bPGO){% endblock %}
+{% block title %}{{ settings[0].siteName }} ({{ settings[0].siteNameticker }}){% endblock %}
 
 {% block body %}
 
-<!-- Masthead-->
-<header class="masthead bg-hero-pgo text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-        {# <!-- Masthead Avatar Image-->
-        <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." /> #}
-        <img class="img-fluid" style="max-width: 255px; width: 100%; margin-bottom: 50px;" src="{{ asset('assets/img/logo.png') }}" alt="bPGO">
-        <!-- Masthead Heading-->
-        <h1 class="masthead-heading mb-0">Baby Pengolincoin</h1>
-        <h2 class="mt-4">($bPGO)</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <!-- Masthead Subheading-->
-        <p class="masthead-subheading font-weight-light mb-0">
-            $BPGO is a hyper-deflationary community driven token on the #BinanceSmartChain
-        </p>
-    </div>
-</header>
+{% for section in sections %}
+    {% if section.title == 'Baby Pengolincoin' %}
+        <!-- Masthead-->
+        <header class="masthead bg-hero-pgo text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <img class="img-fluid" style="max-width: 255px; width: 100%; margin-bottom: 50px;" src="{{ asset('assets/img/logo.png') }}" alt="bPGO">
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading mb-0">{{ section.title }}</h1>
+                <h2 class="mt-4">{{ section.subtitle }}</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">
+                    {{ section.contentMain|replace({'<div>': '', '</div>': '',})|raw }}
+                </p>
+            </div>
+        </header>
+    {% endif %}
+{% endfor %}
 
-{# <!-- Portfolio Section-->
-<section class="page-section portfolio" id="info">
-    <div class="container">
-        <!-- Portfolio Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">info</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <!-- Portfolio Grid Items-->
-        <div class="row justify-content-center">
-            <!-- Portfolio Item 1-->
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                    <div
-                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
+    {# <!-- Portfolio Section-->
+    <section class="page-section portfolio" id="info">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">info</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Portfolio Grid Items-->
+            <div class="row justify-content-center">
+                <!-- Portfolio Item 1-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div
+                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." />
                     </div>
-                    <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." />
+                </div>
+                <!-- Portfolio Item 2-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                        <div
+                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="..." />
+                    </div>
+                </div>
+                <!-- Portfolio Item 3-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                        <div
+                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="..." />
+                    </div>
+                </div>
+                <!-- Portfolio Item 4-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                        <div
+                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/game.png" alt="..." />
+                    </div>
+                </div>
+                <!-- Portfolio Item 5-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                        <div
+                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/safe.png" alt="..." />
+                    </div>
+                </div>
+                <!-- Portfolio Item 6-->
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+                        <div
+                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="..." />
+                    </div>
                 </div>
             </div>
-            <!-- Portfolio Item 2-->
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                    <div
-                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
+        </div>
+    </section> #}
+
+    {% for section in sections %}
+        {% if section.title == 'What is bPGO?' %}
+            <!-- About Section-->
+            <section class="page-section bg-primary text-white mb-0" id="about">
+                <div class="container">
+                    <!-- About Section Heading-->
+                    <h2 class="page-section-heading text-center text-white">{{ section.title }}?</h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
                     </div>
-                    <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="..." />
+                    <!-- About Section Content-->
+                    <div class="row">
+                        <div class="col-lg-4 ms-auto">
+                            <p class="lead">
+                                {{ section.contentLeft|replace({'<div>': '', '</div>': '',})|raw }}
+                            </p>
+                        </div>
+                        <div class="col-lg-4 me-auto">
+                            <p class="lead">
+                                {{ section.contentRight|replace({'<div>': '', '</div>': '',})|raw }}
+                            </p>
+                        </div>
+                    </div>
+                    <!-- About Section Button-->
+                    <div class="text-center mt-4">
+                        <a class="btn btn-xl btn-outline-light" href="{{ section.buttonLink }}">
+                            <i class="fas fa-download me-2"></i>
+                            {{ section.buttonText }}
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <!-- Portfolio Item 3-->
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                    <div
-                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
+            </section>
+        {% endif %}
+    {% endfor %}
+
+    {% for section in sections %}
+        {% if section.title == 'Tokenomics' %}
+            <!-- Tokenomics Section-->
+            <section class="page-section bg-secondary text-white mb-0" id="tokenomics">
+                <div class="container">
+                    <!-- About Section Heading-->
+                    <h2 class="page-section-heading text-center text-white">{{ section.title }}</h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
                     </div>
-                    <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="..." />
+                    <!-- conteact address and details -->
+                    <div class="row">
+                        <div class="col-lg-12 text-center border rounded p-3">
+                            <span class="fs-4">{{ section.contentMain|replace({'<div>': '', '</div>': '',})|raw }}</span>
+                        </div>
+                    </div>
+
+                    <!-- About Section Content-->
+                    <div class="row mt-5">
+                        <div class="col-lg-4 ms-auto">
+                            {{ section.contentLeft|replace({'<div>': '', '</div>': '',})|raw }}
+                        </div>
+                        <div class="col-lg-4 me-auto">
+                            {{ section.contentRight|replace({'<div>': '', '</div>': '',})|raw }}
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- Portfolio Item 4-->
-            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                    <div
-                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
+            </section>
+        {% endif %}
+    {% endfor %}
+
+    {% for section in sections %}
+        {% if section.title == 'Market' %}
+            <!-- Market Section-->
+            <section class="page-section" id="market">
+                <div class="container">
+                    <!-- Market Section Heading-->
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ section.title }}</h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
                     </div>
-                    <img class="img-fluid" src="assets/img/portfolio/game.png" alt="..." />
+                    {#
+                    <!-- Contact Section Form-->
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xl-7">
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- * * SB Forms Contact Form * *-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- This form is pre-integrated with SB Forms.-->
+                            <!-- To make this form functional, sign up at-->
+                            <!-- https://startbootstrap.com/solution/contact-forms-->
+                            <!-- to get an API token!-->
+                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <!-- Name input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..."
+                                        data-sb-validations="required" />
+                                    <label for="name">Full name</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                </div>
+                                <!-- Email address input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="email" type="email" placeholder="name@example.com"
+                                        data-sb-validations="required,email" />
+                                    <label for="email">Email address</label>
+                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                </div>
+                                <!-- Phone number input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
+                                        data-sb-validations="required" />
+                                    <label for="phone">Phone number</label>
+                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.
+                                    </div>
+                                </div>
+                                <!-- Message input-->
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" id="message" type="text"
+                                        placeholder="Enter your message here..." style="height: 10rem"
+                                        data-sb-validations="required"></textarea>
+                                    <label for="message">Message</label>
+                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+                                    </div>
+                                </div>
+                                <!-- Submit success message-->
+                                <!---->
+                                <!-- This is what your users will see when the form-->
+                                <!-- has successfully submitted-->
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Form submission successful!</div>
+                                        To activate this form, sign up at
+                                        <br />
+                                        <a
+                                            href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    </div>
+                                </div>
+                                <!-- Submit error message-->
+                                <!---->
+                                <!-- This is what your users will see when there is-->
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage">
+                                    <div class="text-center text-danger mb-3">Error sending message!</div>
+                                </div>
+                                <!-- Submit Button-->
+                                <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+                            </form>
+                        </div>
+                    </div> #}
+
+                    <div class="row">
+                        <div class="col text-center">
+                            <embed type="text/html" src="https://tokenlicious.com/api.php?id=121&contract=0x8d7E34B786064c205b0c7A1c815c62564CDEEE4E&widget=true" style="width:425px;max-width:100%;height:725px;">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- Portfolio Item 5-->
-            <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-                    <div
-                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
+            </section>
+        {% endif %}
+    {% endfor %}
+
+    {% for section in sections %}
+        {% if section.title == 'Links & Tutos' %}
+            <section class="page-section bg-secondary text-white mb-0" id="links">
+                <div class="container">
+                    <!-- About Section Heading-->
+                    <h2 class="page-section-heading text-center text-white">{{ section.title }}</h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
                     </div>
-                    <img class="img-fluid" src="assets/img/portfolio/safe.png" alt="..." />
+                    <div class="row">
+                        {# <h1 class="text-center fw-bold display-5 mb-4">$bPGO on the Net</h1> #}
+                        <div class="col text-center">
+                            {{ section.contentMain|replace({'<div>': '', '</div>': '',})|raw }}
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        {# <h1 class="text-center fw-bold display-5 mb-4">$bPGO on the Net</h1> #}
+                        <div class="col text-center">
+                            {{ section.contentRight|replace({'<div>': '', '</div>': '',})|raw }}
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- Portfolio Item 6-->
-            <div class="col-md-6 col-lg-4">
-                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                    <div
-                        class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
-                    </div>
-                    <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="..." />
+            </section>
+        {% endif %}
+    {% endfor %}
+
+    {% for section in sections %}
+        {% if section.title == 'Charity' %}
+            <section class="page-section" id="charity">
+                <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ section.title }}</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section> #}
-
-<!-- About Section-->
-<section class="page-section bg-primary text-white mb-0" id="about">
-    <div class="container">
-        <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-white">What is bPGO?</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <!-- About Section Content-->
-        <div class="row">
-            <div class="col-lg-4 ms-auto">
-                <p class="lead">
-                    <h3>Mission and Use Case</h3>
-                    Our mission and use case is to provide the world with a cryptocurrency that will appreciate and provide passive income to holders, but also offers the ability to support a pangolin and other endangered animal charities. Baby PengolinCoin achieves both these goals. First, by implementing the highest dedicated charity tax of any other token. Secondly, with buybacks, burns and reflections on every transaction. Furthermore, Baby PengolinCoin protects its investors with anti-whale mechanisms. Finally, Baby PengolinCoin is partnered with and supported by PengolinCoin. Baby PengolinCoin has the resources of two projects instead of just one. Please read on to learn more!
-                </p>
-            </div>
-            <div class="col-lg-4 me-auto">
-                <p class="lead">
-                    <h3>What is a Pangolin?</h3>
-                    Pangolins are mammals that are uniquely covered in tough, overlapping scales.
-                    These mammals eat ants and termites using an extraordinarily long, sticky tongue, and are able to quickly roll themselves up into a tight ball when they feel threatened. Eight different pangolin species can be found across Asia and Africa. Pangolins are one of the most trafficked mammals in Asia and, increasingly, Africa. Poaching for illegal wildlife trade and habitat loss have made these incredible creatures one of the most threatened groups of mammals in the world.
-                    All eight pangolin species are protected under national and international laws.
-                    But there is still growing international illegal trade in pangolins.
-                </p>
-            </div>
-        </div>
-        <!-- About Section Button-->
-        <div class="text-center mt-4">
-            <a class="btn btn-xl btn-outline-light" href="https://discord.gg/pengolincoin-pgo-wpgo-erc20-bep20-691358401438941239">
-                <i class="fas fa-download me-2"></i>
-                Join us on Discord!
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Tokenomics Section-->
-<section class="page-section bg-secondary text-white mb-0" id="tokenomics">
-    <div class="container">
-        <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-white">Tokenomics</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <!-- conteact address and details -->
-        <div class="row">
-            <div class="col-lg-12 text-center border rounded p-3">
-                <p class="fs-4">
-                    <span class="fw-bold">Contract address:</span><br>
-                    0x8d7E34B786064c205b0c7A1c815c62564CDEEE4E</p>
-            </div>
-        </div>
-
-        <!-- About Section Content-->
-        <div class="row mt-5">
-            <div class="col-lg-4 ms-auto">
-                <p>
-                    <h3>Baby PengolinCoin is a hyper deflationary token</h3>
-                    We chose 8 billion total supply with thought and purpose:<br>
-                    There are 8, for the 8 species of Pangolins and billion to represent how scarce Baby PengolinCoin will be, like all endangered animals.
-                    <br><br>
-                    <h3>Features</h3>
-                    - Reflections 2% of each transaction will be distributed to holders<br>
-                    - Liquidity 3% of each transaction goes to the liquidity pool<br>
-                    - Burn 1% of each transaction will be burned<br>
-                    - Buyback tokens 1% of each transaction will be used to buyback tokens on sell - Hyper-Deflationary
-                </p>
-            </div>
-            <div class="col-lg-4 me-auto">
-                <p>
-                    Tx Fee % to Buyback Tokens The fee will be collected from all transactions as a percentage of the transaction token amount. Once the contract holding exceeds 0.1% of the total supply, automated swap will be executed on a sell transaction and BNB will be added to the token contract. Once the BNB balance of the contract exceeds 1 BNB, on a sell transaction 1% of the available BNB balance will be used to buy back and burn tokens.
-                    <br><br>
-                    - Anti-Whale Mechanism Maximum supply that a wallet can hold: 1%, Maximum transaction allowed: 1% of supply<br>
-                    - Eco-Friendly Token BPGO is a BSC Token which aims at setting up a Carbon Neutral Economy<br>
-                    - Decentralized BPGO is community driven and managed by volunteers<br>
-                    - Anti-rug pull Liquidity Pool Locked for 1 year
-                    <br><br>
-                    Project Development and Charity 3% of each transaction will be sent to a project development and charity wallet
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Section-->
-<section class="page-section" id="market">
-    <div class="container">
-        <!-- Contact Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Market</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-        {#
-        <!-- Contact Section Form-->
-        <div class="row justify-content-center">
-            <div class="col-lg-8 col-xl-7">
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <!-- Name input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="name" type="text" placeholder="Enter your name..."
-                            data-sb-validations="required" />
-                        <label for="name">Full name</label>
-                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                    </div>
-                    <!-- Email address input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="email" type="email" placeholder="name@example.com"
-                            data-sb-validations="required,email" />
-                        <label for="email">Email address</label>
-                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                    </div>
-                    <!-- Phone number input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
-                            data-sb-validations="required" />
-                        <label for="phone">Phone number</label>
-                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.
+                    <div class="row">
+                        {# <h1 class="text-center my-4" id="charity">Charity</h1> #}
+                        <div class="col text-center">
+                            {{ section.contentMain|replace({'<div>': '', '</div>': '',})|raw }}
                         </div>
                     </div>
-                    <!-- Message input-->
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control" id="message" type="text"
-                            placeholder="Enter your message here..." style="height: 10rem"
-                            data-sb-validations="required"></textarea>
-                        <label for="message">Message</label>
-                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+                </div>
+            </section>
+        {% endif %}
+    {% endfor %}
+
+    {% for section in sections %}
+        {% if section.title == 'Roadmap' %}
+            <section class="page-section bg-secondary text-white mb-0" id="roadmap">
+                <div class="container">
+                    <!-- About Section Heading-->
+                    <h2 class="page-section-heading text-center text-white">{{ section.title }}</h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                                {% for roadmap in roadmaps %}
+                                    <div class="col">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ roadmap.title }}</h5>
+                                                <p class="card-text">
+                                                    {{ roadmap.content|replace({'<div>': '', '</div>': '',})|raw }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a
-                                href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                </div>
+            </section>
+        {% endif %}
+    {% endfor %}
+
+    {% for section in sections %}
+        {% if section.title == 'FAQ' %}
+            <section class="page-section" id="faq">
+                <div class="container">
+                    <!-- Contact Section Heading-->
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ section.title }}</h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        {# <h1 class="text-center my-4" id="faq">FAQ</h1> #}
+                        <div class="col-lg-7 col-sm-12">
+                            {{ section.contentMain|replace({'<div>': '', '</div>': '',})|raw }}
                         </div>
                     </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage">
-                        <div class="text-center text-danger mb-3">Error sending message!</div>
-                    </div>
-                    <!-- Submit Button-->
-                    <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
-                </form>
-            </div>
-        </div> #}
-
-        <div class="row">
-            <div class="col text-center">
-                <embed type="text/html" src="https://tokenlicious.com/api.php?id=121&contract=0x8d7E34B786064c205b0c7A1c815c62564CDEEE4E&widget=true" style="width:425px;max-width:100%;height:725px;">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="page-section bg-secondary text-white mb-0">
-    <div class="container">
-        <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-white">$bPGO on the Net</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <div class="row">
-            {# <h1 class="text-center fw-bold display-5 mb-4">$bPGO on the Net</h1> #}
-            <div class="col text-center">
-                <p class="fs-6">
-                    BPGO listed on Dextools and has a liquidity pool! Enter your liquidity and LFG!<br>
-                    <a class="fw-bold" href="https://www.dextools.io/app/en/bnb/pair-explorer/0xbd72c2de5f027af00d884a43e5dcb657378a3800">https://www.dextools.io/app/en/bnb/pair-explorer/0xbd72c2de5f027af00d884a43e5dcb657378a3800</a>
-                </p>
-                <p class="fs-6">
-                    Baby PengolinCoin is listed on PooCoin!<br>
-                    <a target="_blank" class="fw-bold" href="https://poocoin.app/tokens/0x8d7e34b786064c205b0c7a1c815c62564cdeee4e">https://poocoin.app/tokens/0x8d7e34b786064c205b0c7a1c815c62564cdeee4e</a>
-                </p>
-                <p class="fs-6">
-                    Baby PengolinCoin is listed on Tokenlicious!<br>
-                    <a target="_blank" class="fw-bold" href="https://tokenlicious.com/coin.php?coin-name=Baby%20PengolinCoin&id=121">https://tokenlicious.com/coin.php?coin-name=Baby%20PengolinCoin&id=121</a>
-                </p>
-                <p class="fs-6">
-                    Baby PengolinCoin is listed on Coinhunt!<br>
-                    <a target="_blank" class="fw-bold" href="https://coinhunt.cc/coin/64530bcef35ba54c3b25da2d">https://coinhunt.cc/coin/64530bcef35ba54c3b25da2d</a>
-                </p>
-                <p class="fs-6">
-                    Baby PengolinCoin is listed on CoinAlpha!<br>
-                    <a target="_blank" class="fw-bold" href="https://coinalpha.app/token/0x8d7E34B786064c205b0c7A1c815c62564CDEEE4E">https://coinalpha.app/token/0x8d7E34B786064c205b0c7A1c815c62564CDEEE4E</a>
-                </p>
-                <p class="fs-6">
-                    Baby PengolinCoin is listed on CoinScope!<br>
-                    <a target="_blank" class="fw-bold" href="https://www.coinscope.co/coin/bpgo">https://www.coinscope.co/coin/bpgo</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="page-section" id="charity">
-    <div class="container">
-       <!-- Contact Section Heading-->
-       <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Charity</h2>
-       <!-- Icon Divider-->
-       <div class="divider-custom">
-           <div class="divider-custom-line"></div>
-           <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-           <div class="divider-custom-line"></div>
-       </div>
-        <div class="row">
-            {# <h1 class="text-center my-4" id="charity">Charity</h1> #}
-            <div class="col text-center">
-                At the end of each year a donation will be made to a Pangolin Charity and another endangered animal charity.<br>
-                Baby PengolinCoin has the greatest dedicated charity tax of any other token!<br>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="page-section bg-secondary text-white mb-0" id="roadmap">
-    <div class="container">
-        <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-white">Roadmap</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <div class="row">
-            {# <h1 class="text-center my-4" id="charity">Roadmap</h1> #}
-            <h5 class="text-center my-4">At the end of each year a donation will be made to a Pangolin Charity and another endangered animal charity</h5>
-            <div class="col text-center">
-
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="col">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <h5 class="card-title">Phase 1</h5>
-                          <p class="card-text">
-                            Website Launch<br>
-                            Smart Contract Deployment<br>
-                            DEX Listing<br>
-                            Liquidity Lock for 1 year<br>
-                            Airdrop 7 Billion tokens to community<br>
-                            1 Billion Tokens to Liquidity Pool<br>
-                        </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <h5 class="card-title">Phase 2</h5>
-                          <p class="card-text">
-                            Contract Audit<br>
-                            Whitepaper Release<br>
-                            Coinmarketcap + Coingecko Listing<br>
-                            Growth, Promotions, Awareness<br>
-                        </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <h5 class="card-title">Phase 3</h5>
-                          <p class="card-text">
-                            Giveaways<br>
-                            Partnerships<br>
-                            Marketing<br>
-                            NFT Development<br>
-                        </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="page-section" id="faq">
-    <div class="container">
-        <!-- Contact Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">FAQ</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom">
-           <div class="divider-custom-line"></div>
-           <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-           <div class="divider-custom-line"></div>
-        </div>
-        <div class="row d-flex justify-content-center">
-            {# <h1 class="text-center my-4" id="faq">FAQ</h1> #}
-            <div class="col-lg-7 col-sm-12">
-                <ul>
-                    <li><b>What is Baby PengolinCoin?</b> Baby PengolinCoin (BPGO) is a community driven, hyper-deflationary cryptocurrency built for appreciation and passive income with an emphasis on saving Pangolins and other endangered animals.</li>
-                    <li><b>When are the transaction fees applied?</b> They are applied to every transaction, this includes buys, sells and transfers.</li>
-                    <li><b>Is Baby PengolinCoin a coin or a token?</b> Coins are the native asset of a blockchain. $BPGO is a token because it currently resides on the Binance Smart Chain Network.</li>
-                    <li><b>What is the best way to stay updated about Baby PengolinCoin?</b> You can get news and updates about BPGO on the social media links posted here.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+                </div>
+            </section>
+        {% endif %}
+    {% endfor %}
 
 {% endblock %}

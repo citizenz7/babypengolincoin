@@ -25,3 +25,9 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+/public/assets/img/
+/migrations/
+/mysqldump.sql
+/mysqldump.zip
+/site-sync-prod.sh

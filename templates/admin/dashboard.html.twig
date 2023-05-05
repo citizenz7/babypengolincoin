@@ -1,0 +1,158 @@
+{% extends '@!EasyAdmin/layout.html.twig' %}
+
+{% block main %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center">
+            <h1 class="fw-bold border-top border-bottom bg-light">Dashboard</h1>
+            {# <p>
+                Depuis le menu de gauche, vous pouvez administrer et gérer toutes les sections du site.
+            </p> #}
+            {# <p>
+                {% if is_granted('ROLE_ADMIN') and is_granted('ROLE_AUTHOR') and is_granted('ROLE_USER') %}
+                    Rôle : <span class="badge bg-success text-white py-1 px-2">Administrateur</span>
+                {% endif %}
+                {% if not is_granted('ROLE_ADMIN') and is_granted('ROLE_AUTHOR') and is_granted('ROLE_USER') %}
+                    Rôle : <span class="badge bg-primary text-white py-1 px-2">Auteur</span>
+                {% endif %}
+            </p> #}
+            {# <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title border-bottom bg-light">Articles du blog</h5>
+                            <p class="card-text">
+                                Articles actifs : {{ blogs|length }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title border-bottom bg-light">Catégories</h5>
+                            <p class="card-text">
+                                Catégories actives : {{ categories|length }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title border-bottom bg-light">Images</h5>
+                            <p class="card-text">
+                                Images actives : {{ medias|length }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title border-bottom bg-light">Vidéos Youtube</h5>
+                            <p class="card-text">
+                                Vidéos actives : {{ videos|length }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title border-bottom bg-light">Chansons</h5>
+                            <p class="card-text">
+                                Chansons actives : {{ songs|length }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title border-bottom bg-light">Commentaires</h5>
+                            <p class="card-text">
+                                Commentaires actifs : {{ comments|length }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title border-bottom bg-light">Utilisateurs</h5>
+                            <p class="card-text">
+                                Utilisateurs actifs : {{ users|length }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div> #}
+        </div>
+    </div>
+
+    {# <div class="row mt-5">
+        <div class="col-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title border-bottom mb-3 bg-light">Les 5 derniers articles actifs</h5>
+                    {% for blog in blogs5 %}
+                        <i class="far fa-check-square"></i>
+                        <a href="{{ path('app_blog_show', {'slug': blog.slug}) }}">
+                            {{ blog.title }}
+                        </a>
+                        <br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title border-bottom mb-3 bg-light">Les 5 derniers commentaires actifs</h5>
+                    {% for comment in comments5 %}
+                        <i class="far fa-check-square"></i>
+                        {{ comment.createdAt|format_datetime('medium', 'none', locale='fr') }} | <span class="text-muted small">{{ comment.author }}</span> | <a
+                            href="{{ path('app_blog_show', {'slug': comment.blog.slug}) }}">{{ comment.blog.slug }}</a>
+                        <br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div> #}
+
+    {# <div class="row mt-3">
+        <div class="col-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title border-bottom mb-3 bg-light">Les 5 articles les plus lus</h5>
+                    {% for blog in blogViews %}
+                        <i class="far fa-check-square"></i> [ {{ blog.views }} ]
+                        <a href="{{ path('app_blog_show', {'slug': blog.slug}) }}">
+                            {{ blog.title }}
+                        </a>
+                        <br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title border-bottom mb-3 bg-light">Les 5 dernières images principales d'article</h5>
+                    <div class="d-flex justify-content-center">
+                    {% for blog in blogs5 %}
+                        <a href="{{ asset('assets/img/blog/' ~ blog.image) }}">
+                            <img src="{{ asset('assets/img/blog/' ~ blog.image) }}" alt="{{ blog.title }}" class="img-fluid" style="max-height: 80px; width: 100%; border-radius: 10px; padding: 0 5px;">
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> #}
+
+</div>
+
+{% endblock %}

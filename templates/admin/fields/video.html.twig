@@ -1,0 +1,14 @@
+{% if field.value %}
+    {# <iframe width="560" height="315" src="https://www.youtube.com/embed/hE1UXoJb7OE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> #}
+    <div class="video-container">
+        <iframe width="250" height="150" loading="lazy" src="{{ field.formattedValue|replace({
+            'https://youtu.be/' : 'https://www.youtube.com/embed/',
+            'https://www.youtube.com/watch?v=' : 'https://www.youtube.com/embed/'
+            }) }}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+    {# <a href="{{ asset('assets/files/songs/' ~ field.formattedValue ) }}" target="_blank">
+    </a> #}
+{% endif %}

@@ -1,38 +1,32 @@
-<!-- Footer-->
+<!-- Footer -->
 <footer class="footer text-center">
     <div class="container">
         <div class="row">
-            <!-- Footer Location-->
             <div class="col-lg-4 mb-5 mb-lg-0">
-                <h4 class="text-uppercase mb-4">Baby Pengolincoin $bPGO</h4>
+                <h4 class="text-uppercase mb-4">{{ settings[0].siteFooterlefttitle }}</h4>
                 <p class="mb-0 text-small">
-                    <span class="fw-bold">Disclaimer:</span> PengolinCoin cannot take responsibility for third party providers, such as the listed exchanges, wallets and sites. By clicking on any of the listed links you are accepting the risks of using the third party domain and taking responsibility for any losses, damage or other issues using said domain. Crypto-currencies are inherently risky and investors and users must remain vigilant.
+                    {{ settings[0].siteDisclaimer|replace({'<div>': '', '</div>': '',})|raw }}
             </div>
-            <!-- Footer Social Icons-->
+            <!-- Footer Social Icons -->
             <div class="col-lg-4 mb-5 mb-lg-0">
-                <h4 class="text-uppercase mb-4">Around the Web</h4>
-                {# <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a> #}
-                <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/PengolinC"><i class="fab fa-fw fa-twitter"></i></a>
-                {# <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a> #}
-                {# <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a> #}
-                <a class="btn btn-outline-light btn-social mx-1" href="https://t.me/pengolincoin"><i class="fab fa-fw fa-telegram"></i></a>
-                <a class="btn btn-outline-light btn-social mx-1" href="https://discord.gg/pengolincoin-pgo-wpgo-erc20-bep20-691358401438941239"><i class="fab fa-fw fa-discord"></i></a>
-                <a class="btn btn-outline-light btn-social mx-1" href="https://www.youtube.com/user/CTLawInfo"><i class="fab fa-fw fa-youtube"></i></a>
+                <h4 class="text-uppercase mb-4">{{ settings[0].siteFootercentertitle }}</h4>
+                {% for social in socials %}
+                    <a class="btn btn-outline-light btn-social mx-1" href="{{ social.url }}"><i class="fab fa-fw fa-{{ social.title }}"></i></a>
+                {% endfor %}
             </div>
-            <!-- Footer About Text-->
             <div class="col-lg-4">
-                <h4 class="mb-4">About bPGO</h4>
+                <h4 class="mb-4">{{ settings[0].siteFooterrighttitle }}</h4>
                 <p class="lead mb-0">
-                    Hyper-deflationary community driven token on the Binance SmartChain
+                    {{ settings[0].siteFooterrightcontent|replace({'<div>': '', '</div>': '',})|raw }}
                 </p>
             </div>
         </div>
     </div>
 </footer>
 
-<!-- Copyright Section-->
+<!-- Copyright Section -->
 <div class="copyright py-4 text-center text-white">
-    <div class="container"><small>Copyright &copy; bpgo 2023</small></div>
+    <div class="container"><small>Copyright &copy; {{ settings[0].siteName }} 2023</small></div>
 </div>
 
 
