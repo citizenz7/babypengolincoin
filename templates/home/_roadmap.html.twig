@@ -1,0 +1,35 @@
+{% for section in sections %}
+    {% if section.title == 'Roadmap' %}
+        <section class="page-section bg-secondary text-white mb-0" id="roadmap">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-white">{{ section.title }}</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                            {% for roadmap in roadmaps %}
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ roadmap.title }}</h5>
+                                        <p class="card-text">
+                                            {{ roadmap.content|replace({'<div>': '', '</div>': '',})|raw }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endfor %}

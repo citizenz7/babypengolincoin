@@ -1,0 +1,31 @@
+{% for section in sections %}
+    {% if section.title == 'Market' %}
+    <!-- Market Section-->
+    <section class="page-section" id="market">
+        <div class="container">
+            <!-- Market Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ section.title }}</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+            <div class="row">
+                <div class="col text-center">
+                    {# <embed type="text/html" src="https://tokenlicious.com/api.php?id=121&contract=0x8d7E34B786064c205b0c7A1c815c62564CDEEE4E&widget=true" style="width:425px;max-width:100%;height:725px;"> #}
+                    <iframe width=100% height="700" frameBorder="0" scrolling="no"
+                        src="https://coinbrain.com/coins/bnb-0x8d7e34b786064c205b0c7a1c815c62564cdeee4e/lite?theme=light&padding=16&currency=USD"></iframe>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <iframe width="100%" height="1000" frameBorder="0" scrolling="no"
+                        src="https://coinbrain.com/embed/bnb-0x8d7e34b786064c205b0c7a1c815c62564cdeee4e?theme=light&padding=16&chart=1&trades=1"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+{% endfor %}

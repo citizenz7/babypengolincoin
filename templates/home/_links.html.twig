@@ -1,0 +1,34 @@
+{% for section in sections %}
+    {% if section.title == 'Links & Tutos' %}
+        <section class="page-section bg-secondary text-white mb-0" id="links">
+            <div class="container">
+                <!-- Links Section Heading-->
+                <h2 class="page-section-heading text-center text-white">{{ section.title }}</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="row">
+                    {# <h1 class="text-center fw-bold display-5 mb-4">$bPGO on the Net</h1> #}
+                    <div class="col text-center text-break">
+                        {{ section.contentMain|replace({'<div>': '', '</div>': '',})|raw }}
+                    </div>
+                </div>
+
+                {# <div class="row mt-5">
+                    <div class="col text-center">
+                        {{ section.contentRight|replace({'<div>': '', '</div>': '',})|raw }}
+                    </div>
+                </div> #}
+
+                <div class="row mt-5">
+                    <div class="col text-center border rounded bg-white text-dark pt-4 pb-5">
+                        {{ section.contentRight|replace({'<div>': '', '</div>': '',})|raw }}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,33 @@
+{% for section in sections %}
+    {% if section.title == 'Tokenomics' %}
+        <!-- Tokenomics Section-->
+        <section class="page-section bg-secondary text-white mb-0" id="tokenomics">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-white">{{ section.title }}</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- conteact address and details -->
+                <div class="row">
+                    <div class="col-lg-12 text-center border rounded p-3">
+                        <p class="fs-4 text-break">{{ section.contentMain|replace({'<div>': '', '</div>': '',})|raw }}</p>
+                    </div>
+                </div>
+
+                <!-- About Section Content-->
+                <div class="row mt-5">
+                    <div class="col-lg-4 ms-auto">
+                        {{ section.contentLeft|replace({'<div>': '', '</div>': '',})|raw }}
+                    </div>
+                    <div class="col-lg-4 me-auto">
+                        {{ section.contentRight|replace({'<div>': '', '</div>': '',})|raw }}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endfor %}

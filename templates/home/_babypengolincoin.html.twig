@@ -1,0 +1,23 @@
+{% for section in sections %}
+    {% if section.title == 'Baby Pengolincoin' %}
+        <!-- Masthead-->
+        <header class="masthead bg-hero-pgo text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <img class="img-fluid" style="max-width: 255px; width: 100%; margin-bottom: 50px;" src="{{ asset('assets/img/logo.png') }}" alt="bPGO">
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading mb-0">{{ section.title }}</h1>
+                <h2 class="mt-4">{{ section.subtitle }}</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">
+                    {{ section.contentMain|replace({'<div>': '', '</div>': '',})|raw }}
+                </p>
+            </div>
+        </header>
+    {% endif %}
+{% endfor %}
