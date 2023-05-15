@@ -7,6 +7,7 @@ use App\Entity\Social;
 use App\Entity\Roadmap;
 use App\Entity\Section;
 use App\Entity\Setting;
+use App\Entity\Team;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
@@ -73,6 +74,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Users', 'fa fa-user', User::class);
         yield MenuItem::linkToCrud('Roadmap', 'fa fa-map', Roadmap::class);
         yield MenuItem::linkToCrud('Social', 'fa fa-share-alt', Social::class);
+        yield MenuItem::linkToCrud('Team', 'fa fa-users', Team::class);
         yield MenuItem::linkToCrud('Settings', 'fas fa-sliders-h', Setting::class);
     }
 

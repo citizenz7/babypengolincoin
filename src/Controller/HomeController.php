@@ -6,6 +6,7 @@ use App\Repository\RoadmapRepository;
 use App\Repository\SectionRepository;
 use App\Repository\SettingRepository;
 use App\Repository\SocialRepository;
+use App\Repository\TeamRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,7 +18,8 @@ class HomeController extends AbstractController
         SettingRepository $settingRepository,
         RoadmapRepository $roadmapRepository,
         SectionRepository $sectionRepository,
-        SocialRepository $socialRepository
+        SocialRepository $socialRepository,
+        TeamRepository $teamRepository
     ): Response
     {
         return $this->render('home/index.html.twig', [
@@ -25,6 +27,7 @@ class HomeController extends AbstractController
             'roadmaps' => $roadmapRepository->findAll(),
             'sections' => $sectionRepository->findAll(),
             'socials' => $socialRepository->findAll(),
+            'teams' => $teamRepository->findAll()
         ]);
     }
 }
