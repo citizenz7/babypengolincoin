@@ -11,7 +11,9 @@
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">{{ settings[0].siteFootercentertitle }}</h4>
                 {% for social in socials %}
-                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="{{ social.url }}"><i class="fab fa-fw fa-{{ social.title }}"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="{{ social.url }}">
+                        <img src="{{ asset('assets/img/social/' ~ social.image ) }}" alt="{{ social.title }}" class="img-fluid">
+                    </a>
                 {% endfor %}
                 <p class="mt-4">
                     <a class="text-decoration-none" href="https://coinpaprika.com/coin/bpgo-baby-pengolincoin/" target="_blank">
