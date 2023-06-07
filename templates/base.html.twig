@@ -37,24 +37,9 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
-    <!-- Google fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPMJ65EK3J"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-DPMJ65EK3J');
-    </script>
-
     {% block stylesheets %}
     {{ encore_entry_link_tags('app') }}
+    <link rel="stylesheet" href="https://voltichange.net/css/widget.css">
     {% endblock %}
 
     {% block javascripts %}
@@ -116,8 +101,15 @@
     {% include '_includes/_footer.html.twig' %}
 
     <script type="text/javascript">
-        tarteaucitron.user.googleFonts = 'Montserrat, Lato';
+        tarteaucitron.user.googleFonts = ['Montserrat', 'Lato'];
         (tarteaucitron.job = tarteaucitron.job || []).push('googlefonts');
+    </script>
+
+    <script type="text/javascript">
+        tarteaucitron.user.gtagUa = 'G-DPMJ65EK3J';
+        // tarteaucitron.user.gtagCrossdomain = ['example.com', 'example2.com'];
+        tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
+        (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
     </script>
 </body>
 
