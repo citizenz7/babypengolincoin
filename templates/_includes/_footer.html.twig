@@ -25,10 +25,17 @@
                 </p>
             </div>
             <div class="col-lg-4">
-                <h4 class="mb-4">{{ settings[0].siteFooterrighttitle }}</h4>
+                {# <h4 class="mb-4">{{ settings[0].siteFooterrighttitle }}</h4>
                 <p class="lead mb-0">
                     {{ settings[0].siteFooterrightcontent|replace({'<div>': '', '</div>': '',})|raw }}
-                </p>
+                </p> #}
+                <a href="https://coincheckup.com/coins/baby-pengolincoin" target="_blank">
+                    <img src="{{ asset('assets/img/CoinCheckUp.png') }}" alt="CoinCheckUp" style="display: block; margin: 0 auto; max-width: 100%; height: auto; padding: 10px; width: 125px;">
+                </a>
+
+                <a href="https://cratex.io/darkhak.php?pair=BPGO/USDT" target="_blank">
+                    <img src="https://cratex.io/images/logo-3.png" alt="Cratex Exchange" style="display: block; margin: 0 auto; max-width: 100%; height: auto; padding: 10px;">
+                </a>
             </div>
         </div>
     </div>
@@ -38,15 +45,6 @@
 <div class="copyright py-4 text-center text-white">
     <div class="container"><small>Copyright &copy; {{ settings[0].siteName }} 2023</small></div>
 </div>
-
-<a href="https://coincheckup.com/coins/baby-pengolincoin" target="_blank">
-    <img src="/public/assets/img/coincheckup.png" alt="CoinCheckUp" style="display: block; margin: 0 auto; max-width: 100%; height: auto; padding: 10px; width: 125px;">
-</a>
-
-<a href="https://cratex.io/darkhak.php?pair=BPGO/USDT" target="_blank">
-    <img src="https://cratex.io/images/logo-3.png" alt="Cratex Exchange" style="display: block; margin: 0 auto; max-width: 100%; height: auto; padding: 10px;">
-</a>
-
 
 {# <!-- Portfolio Modals-->
 <!-- Portfolio Modal 1-->
