@@ -31,3 +31,4 @@ yarn-error.log
 /mysqldump.sql
 /mysqldump.zip
 /site-sync-prod.sh
+/.php-version
